@@ -1,0 +1,46 @@
+http://localhost:8888/tree/Mlifx for jupiter notebook
+
+Create your Atlas Cluster:
+username: m220student
+password: m220password
+
+
+Download Anaconda:
+https://www.anaconda.com/download/#windows
+
+After installing Anaconda with the add to my Path enviroment variable run this in CMD:
+set PATH=%PATH%;<path-to-Anaconda3>;<path-to-Anaconda3>\Scripts\
+In my case:
+set PATH =%PATH%; C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Scripts\
+
+Create the Conda environment:
+# enter mflix-python folder
+cd mflix-python
+
+# create a new environment for MFlix
+conda create --name mflix
+
+# activate the environment
+activate mflix
+
+# deactivate the environment
+deactivate
+
+
+Install the requirements for this course ( you must be in the mflix-python folder with cmd to run it):
+pip install -r requirements.txt
+cmd -> cd / cd mflix-python when the path is ...mflix-python pip install -r requirements.txt
+
+Download mongo https://www.mongodb.com/download-center/enterprise from the mongo download center:
+make sure u have pymongo installed
+
+
+Import data:
+cd mflix-python
+
+# import data into Atlas
+mongorestore --drop --gzip --uri mongodb+srv://m220student:m220password<YOUR_CLUSTER_URI> data
+
+mongorestore --drop --gzip --uri mongodb+srv://m220student:m220password@mflix-cyw2f.mongodb.net/test?retryWrites=true data
+
+atlas name:mflix-cyw2f.mongodb.net/test?retryWrites=true
