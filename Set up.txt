@@ -48,3 +48,11 @@ Run pip install for flask_jwt_extended flak_bcrypt
 
 Modified the run.py script in the mflix-python folder because of keyerror ' PROD' error. config.read form the package configparser did not parse find the ini (config file)
 config.read(os.path.abspath(os.path.join("C:\mflix-python\dotini_win.ini")))
+Do the same thing for C:\mflix-python\tests\
+config.read(os.path.abspath(os.path.join("C:\mflix-python\tests\conftest.py")))
+To run the 
+from pymongo import MongoClient
+uri = "mongodb+srv://m220student:m220password@mflix-cyw2f.mongodb.net/test"
+
+you must install the dnspython pip install dnspython. **** You must restart the jupyter notebook
+
