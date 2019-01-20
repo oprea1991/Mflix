@@ -44,3 +44,4 @@ mongorestore --drop --gzip --uri mongodb+srv://m220student:m220password<YOUR_CLU
 mongorestore --drop --gzip --uri mongodb+srv://m220student:m220password@mflix-cyw2f.mongodb.net/test?retryWrites=true data
 
 atlas name:mflix-cyw2f.mongodb.net/test?retryWrites=true
+Run pip install for flask_jwt_extended flak_bcrypt
