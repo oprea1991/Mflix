@@ -45,3 +45,6 @@ mongorestore --drop --gzip --uri mongodb+srv://m220student:m220password@mflix-cy
 
 atlas name:mflix-cyw2f.mongodb.net/test?retryWrites=true
 Run pip install for flask_jwt_extended flak_bcrypt
+
+Modified the run.py script in the mflix-python folder because of keyerror ' PROD' error. config.read form the package configparser did not parse find the ini (config file)
+config.read(os.path.abspath(os.path.join("C:\mflix-python\dotini_win.ini")))
