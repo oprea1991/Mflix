@@ -57,3 +57,4 @@ uri = "mongodb+srv://m220student:m220password@mflix-cyw2f.mongodb.net/test"
 
 you must install the dnspython pip install dnspython. **** You must restart the jupyter notebook
 
+Pentru teste trebuie sa adaug pymongo pentru mflix
