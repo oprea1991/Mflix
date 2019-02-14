@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[16]:
+
+
+import pymongo 
+uri = "mongodb+srv://m220student:m220password@mflix-cyw2f.mongodb.net/test"
+client = pymongo.MongoClient(uri)
+m220=client.m220
+movies=m220.movies
+
+
+# In[18]:
+
+
+client.stats
+
+
+# In[19]:
+
+
+client.list_database_names()
+
+
+# In[20]:
+
+
+mflix=client['mflix']
+mflix.list_collection_names()
+
+
+# In[21]:
+
+
+movies = mflix.movies
+
+
+# In[22]:
+
+
+movies.count_documents({})
+
+
+# In[ ]:
+
+
+
+
