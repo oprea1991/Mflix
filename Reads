@@ -10,3 +10,23 @@ from bson.json_util import dumps
 print(dumps(cursor, indent =2))
 cursor = movies.find({"cast": "Salma Hayek"}, {"title":1, "_id":0}) 
 print(dumps(cursor, indent =2))
+
+
+Search in list:
+ return list(db.movies.find({"countries": {"$in":countries}},{"title":1} ).limit(1))
+     # The field "tomatoes.viewer.numReviews" only exists in the movies we want
+    # to display on the front page of MFlix, because they are famous or
+    # aesthetically pleasing. When we sort on it, the movies containing this
+    # field will be displayed at the top of the page.
+    sort = [("tomatoes.viewer.numReviews", DESCENDING)]
+    project = None
+    if filters:
+        if "text" in filters:
+            query = {"$text": {"$search": filters["text"]}}
+            meta_score = {"$meta": "textScore"}
+            sort = [("score", meta_score)]
+            project = {"score": meta_score}
+        elif "cast" in filters:
+            query = {"cast": {"$in": filters["cast"]}}
+        elif "genres" in filters:
+			query = {"genres": {"$in": filters["genres"]}}
