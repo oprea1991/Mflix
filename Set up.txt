@@ -30,6 +30,7 @@ deactivate
 Install the requirements for this course ( you must be in the mflix-python folder with cmd to run it):
 pip install -r requirements.txt
 cmd -> cd / cd mflix-python when the path is ...mflix-python pip install -r requirements.txt
+You should have the anaconda environment when running the pip install
 
 Download mongo https://www.mongodb.com/download-center/enterprise from the mongo download center:
 make sure u have pymongo installed
