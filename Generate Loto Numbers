@@ -1,0 +1,7 @@
+import random
+a=[]
+while len(a) <8:
+    x = random.randint(1,20)
+    if x not in a:
+      a.append(x)
+print(a)    
