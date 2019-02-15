@@ -30,3 +30,21 @@ Search in list:
             query = {"cast": {"$in": filters["cast"]}}
         elif "genres" in filters:
 			query = {"genres": {"$in": filters["genres"]}}
+
+##Implementation of Ticket: Text and Subfield Search
+def build_query_sort_project(filters):
+    query = {}
+    sort = [("tomatoes.viewer.numReviews", DESCENDING)]
+    project = None
+    if filters:
+        if "text" in filters:
+            query = {"$text": {"$search": filters["text"]}}
+            meta_score = {"$meta": "textScore"}
+            sort = [("score", meta_score)]
+            project = {"score": meta_score}
+        elif "cast" in filters:
+            query = {"cast": {"$in": filters["cast"]}}
+        elif "genres" in filters:
+            # here's an implementation of the "genres" query
+            query = {"genres": {"$in": filters["genres"]}}
+    return query, sort, project
